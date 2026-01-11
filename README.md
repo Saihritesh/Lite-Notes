@@ -1,1 +1,1 @@
-# Hello wekcome to Lite-Notes
+# Hello welcome to Lite-Notes
