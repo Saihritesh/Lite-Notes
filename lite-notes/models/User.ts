@@ -1,24 +1,21 @@
 import mongoose from "mongoose";
 
-const UserSchema = new mongoose.Schema(
-  {
-    username: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    passwordHash: {
-      type: String,
-      required: true,
-    },
-    isVerified: {
-      type: Boolean,
-      default: false,
-    },
+const UserSchema = new mongoose.Schema({
+  appwriteId: {
+    type: String,
+    required: true,
+    unique: true,
   },
-  { timestamps: true }
-);
+  email: {
+    type: String,
+    required: true,
+  },
+  name: String,
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
-// Prevent model overwrite in dev
 export default mongoose.models.User ||
   mongoose.model("User", UserSchema);
